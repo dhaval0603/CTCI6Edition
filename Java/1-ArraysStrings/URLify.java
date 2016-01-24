@@ -1,5 +1,12 @@
 import java.util.Scanner;
 
+/***
+ * Convert a normal string to URL. Convert spaces to %20.
+ * Length of input char array is sufficient enough to include the extra characters needed for URLifying
+ * True length of the string is provided. Inplace conversion.
+ * @author Dhaval
+ *
+ */
 public class URLify {
 
 	public static void main(String[] args) {
@@ -12,6 +19,12 @@ public class URLify {
 		System.out.println("URL version of the string : " + urlify(inputString, trueLength));
 	}
 
+	/**
+	 * In-place encoding of spaces to '%20'
+	 * @param inputString
+	 * @param trueLength
+	 * @return
+	 */
 	public static String urlify(String inputString, int trueLength) {
 		int countSpace = 0;
 		char input[] = inputString.toCharArray();
