@@ -17,6 +17,7 @@ public class URLify {
 		int trueLength = sc.nextInt();
 
 		System.out.println("URL version of the string : " + urlify(inputString, trueLength));
+		sc.close();
 	}
 
 	/**

@@ -18,6 +18,7 @@ public class Unique {
 			System.out.println("All characeters are unique");
 		else
 			System.out.println("All characeters are not unique");
+		sc.close();
 	}
 
 	/**
