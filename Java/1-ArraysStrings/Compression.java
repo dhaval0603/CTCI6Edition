@@ -31,6 +31,7 @@ public class Compression {
 		StringBuffer result = new StringBuffer();
 		char currentChar = inputString.charAt(0);
 		int count = 0;
+		
 		for (int i = 0; i < inputString.length(); i++) {
 			// Count characters till a new character is found.
 			if (inputString.charAt(i) == currentChar) {
