@@ -16,7 +16,7 @@ public class PermutationPalindrome {
 			System.out.println("String is permutation of a palindrome");
 		else
 			System.out.println("String is NOT a permutation of a palindrome");
-
+		sc.close();
 	}
 
 	/**

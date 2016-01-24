@@ -20,7 +20,7 @@ public class Permutation {
 			System.out.println("Strings are permutations");
 		else
 			System.out.println("Strings are not permutations");
-
+		sc.close();
 	}
 
 	/**
