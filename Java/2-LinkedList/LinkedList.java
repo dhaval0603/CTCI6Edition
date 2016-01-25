@@ -85,6 +85,37 @@ public class LinkedList {
 		return removed.getData();
 	}
 
+	public Node getLast() {
+		if (head == null)
+			return null;
+
+		Node current = head;
+		while (current.getNext() != null) {
+			current = current.getNext();
+		}
+
+		return current;
+	}
+
+	public Node getFirst() {
+		if (head == null)
+			return null;
+		return head;
+	}
+
+	public LinkedList clone() {
+		LinkedList clone = new LinkedList();
+
+		Node current = this.head;
+
+		while (current != null) {
+			clone.addElementAtEnd(current.getData());
+			current=current.getNext();
+		}
+
+		return clone;
+	}
+
 	public int size() {
 		return this.size;
 	}
@@ -94,12 +125,12 @@ public class LinkedList {
 			System.out.println("List Empty");
 		} else {
 			Node current = head;
-			while (current != null) {
+			while (current.getNext() != null) {
 				System.out.print(current.getData() + " --> ");
 				current = current.getNext();
 			}
+			System.out.println(current.getData());
 		}
-		System.out.println();
 	}
 
 }
