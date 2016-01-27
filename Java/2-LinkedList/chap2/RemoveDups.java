@@ -1,5 +1,10 @@
+package chap2;
+
 import java.util.HashSet;
 import java.util.Scanner;
+
+import chap2.LinkedList;
+import chap2.Node;
 
 /***
  * Remove duplicates from a linked list. With and without extra buffer space.

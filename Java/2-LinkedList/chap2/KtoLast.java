@@ -1,4 +1,8 @@
+package chap2;
+
 import java.util.Scanner;
+import chap2.LinkedList;
+import chap2.Node;
 
 /***
  * Return Kth to last element Linked list size is unknown

@@ -1,4 +1,9 @@
+package chap2;
+
 import java.util.Scanner;
+
+import chap2.LinkedList;
+import chap2.Node;
 
 /***
  * Delete a given node without traversing through the linkedlist. Node will
