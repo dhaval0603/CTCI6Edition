@@ -62,9 +62,13 @@ public class Partition {
 		}
 
 		// Join the two lists
-		beforeList.getLast().setNext(afterList.getFirst());
-		partitionedList = beforeList;
-
+		if(beforeList.getLast()==null) {
+			partitionedList = afterList;
+		} else { 
+			beforeList.getLast().setNext(afterList.getFirst());
+			partitionedList = beforeList;
+		}
+		
 		return partitionedList;
 	}
 

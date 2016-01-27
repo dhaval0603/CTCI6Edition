@@ -20,6 +20,8 @@ public class Permutation {
 			System.out.println("Strings are permutations");
 		else
 			System.out.println("Strings are not permutations");
+		
+		System.out.println("Mininum deletions needed to make them permutations : "+minDeletions(string1, string2));
 		sc.close();
 	}
 
@@ -54,6 +56,37 @@ public class Permutation {
 			if (charCounts.get(string2.charAt(j)) == -1)
 				return false;
 		}
+		
 		return true;
+	}
+	
+	public static int minDeletions(String string1, String string2) {
+		int count=0;
+		if(isPermutation(string1, string2))
+			return 0;
+		else{
+			HashMap<Character, Integer> charCounts = new HashMap<Character, Integer>();
+
+			// Count char counts of string1
+			for (int i = 0; i < string1.length(); i++) {
+				if (charCounts.get(string1.charAt(i)) == null)
+					charCounts.put(string1.charAt(i), 1);
+				else
+					charCounts.put(string1.charAt(i), charCounts.get(string1.charAt(i)) + 1);
+			}
+
+			// Count char counts of string2.
+			// If an imbalance/new character is found, count will be -1
+			for (int j = 0; j < string2.length(); j++) {
+				if (charCounts.get(string2.charAt(j)) == null)
+					charCounts.put(string2.charAt(j), -1);
+				else 
+					charCounts.put(string2.charAt(j), charCounts.get(string2.charAt(j)) - 1);
+			}
+			
+			for(Character iterator:charCounts.keySet())
+				count += Math.abs(charCounts.get(iterator));
+		}
+		return count;
 	}
 }
