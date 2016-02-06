@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Graph {
-	public static HashMap<Integer, GraphNode> graph;
+	public HashMap<Integer, GraphNode> graph;
 	
 	public Graph() {
 		graph = new HashMap<Integer, GraphNode>();
 	}
 	
-	public static void addNode(int node){
+	public void addNode(int node){
 		graph.put(node, new GraphNode(node));
 	}
 	
-	public static void addNeighbour(int node, int neighbour) {
+	public void addNeighbour(int node, int neighbour) {
 		graph.get(node).neighbours.add(neighbour);
 	}
 	
