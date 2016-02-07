@@ -2,6 +2,7 @@ package chap4;
 
 public class BinarySearchTree {
 	public BinaryTreeNode root;
+	private static int count = 0;
 
 	public BinarySearchTree() {
 		root = null;
@@ -81,6 +82,57 @@ public class BinarySearchTree {
 			}
 			return true;
 		}
+	}
+
+	public int min() {
+		if (root == null)
+			return 0;
+		else {
+			BinaryTreeNode current = root;
+
+			while (current.left != null) {
+				current = current.left;
+			}
+			return current.data;
+		}
+	}
+
+	public int max() {
+		if (root == null)
+			return 0;
+		else {
+			BinaryTreeNode current = root;
+
+			while (current.right != null) {
+				current = current.right;
+			}
+			return current.data;
+		}
+	}
+
+	public int lca(BinaryTreeNode root, int n1, int n2) {
+		if (root == null)
+			return 0;
+		if (n1 < root.data && n2 < root.data) {
+			return lca(root.left, n1, n2);
+		}
+		if (n1 > root.data && n2 > root.data) {
+			return lca(root.right, n1, n2);
+		}
+		return root.data;
+	}
+
+	public void kThSmallest(BinaryTreeNode root, int k) {
+
+		if (root == null)
+			return;
+
+		kThSmallest(root.left, k);
+		count++;
+		if (k == count)
+			System.out.println(root.data);
+		kThSmallest(root.right, k);
+
 	}
 
 	public boolean search(int data) {

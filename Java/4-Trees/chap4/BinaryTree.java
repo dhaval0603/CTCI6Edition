@@ -204,6 +204,20 @@ public class BinaryTree {
 		}
 	}
 
+	public boolean isBst(BinaryTreeNode root) {
+		if (root == null)
+			return true;
+		else {
+			if (root.left != null && root.left.data > root.data)
+				return false;
+			if (root.right != null && root.right.data < root.data)
+				return false;
+			else if (!isBst(root.left) || !isBst(root.right))
+				return false;
+			return true;
+		}
+	}
+
 	public BinaryTreeNode deepestNode() {
 
 		if (root == null)
@@ -323,7 +337,7 @@ public class BinaryTree {
 			return sum;
 		}
 	}
-	
+
 	public int sumRecursion(BinaryTreeNode root) {
 
 		if (root == null)
@@ -332,22 +346,22 @@ public class BinaryTree {
 			return root.data + sumRecursion(root.left) + sumRecursion(root.right);
 		}
 	}
-	
+
 	public void rootToLeafPaths(BinaryTreeNode root, int[] path, int length) {
-		if(root==null)
+		if (root == null)
 			return;
 		path[length] = root.data;
 		length++;
-		
-		if(root.left == null && root.right==null )
+
+		if (root.left == null && root.right == null)
 			print(path, length);
 		else {
 			rootToLeafPaths(root.left, path, length);
 			rootToLeafPaths(root.right, path, length);
 		}
-		
+
 	}
-	
+
 	public boolean identical(BinaryTree btree2) {
 		if (root == null && btree2.root == null)
 			return true;
@@ -412,10 +426,10 @@ public class BinaryTree {
 			preOrderTraversal(node.right);
 		}
 	}
-	
-	private void print(int[] path, int index)  {
-		for(int i = 0; i<index;i++) {
-			System.out.print(path[i]+ " --> ");
+
+	private void print(int[] path, int index) {
+		for (int i = 0; i < index; i++) {
+			System.out.print(path[i] + " --> ");
 		}
 		System.out.println();
 	}
