@@ -397,19 +397,19 @@ public class BinaryTree {
 		}
 	}
 
-	public void preOrderTraversal(BinaryTreeNode node) {
+	public void postOrderTraversal(BinaryTreeNode node) {
 		if (node != null) {
-			preOrderTraversal(node.left);
-			preOrderTraversal(node.right);
+			postOrderTraversal(node.left);
+			postOrderTraversal(node.right);
 			System.out.print(node.data + " ");
 		}
 	}
 
-	public void postOrderTraversal(BinaryTreeNode node) {
+	public void preOrderTraversal(BinaryTreeNode node) {
 		if (node != null) {
 			System.out.print(node.data + " ");
-			postOrderTraversal(node.left);
-			postOrderTraversal(node.right);
+			preOrderTraversal(node.left);
+			preOrderTraversal(node.right);
 		}
 	}
 	
